@@ -2,82 +2,60 @@
 title: FAQ
 ---
 
-<Info>Didn't find an answer? Explore the <a href="https://help.starswap.xyz/">help guides</a> or join the <a href="https://discord.gg/FCfyBSbCU5">community Discord</a> to get support</Info>
+<!-- <Info>Didn't find an answer? Explore the <a href="https://help.starswap.xyz/">help guides</a> or join the <a href="https://discord.gg/FCfyBSbCU5">community Discord</a> to get support</Info> -->
 
-# What is Starswap?
+### Why must Starswap be deployed on the Starcoin?
 
-Starswap is a protocol for creating liquidity and trading ERC-20 tokens on [Ethereum](https://ethereum.org/en/what-is-ethereum/). It eliminates trusted intermediaries and unnecessary forms of rent extraction, allowing for fast, efficient trading. Where it makes tradeoffs - decentralization, censorship resistance and security are prioritized. Starswap is open-source software licensed under GPL.
+This is because Starcoin has an open ecosystem and secure architecture, which guarantees that Starswap is an easy and secure DEX for trading and exchanging, making more user-friendly decentralized finance (DeFi).
 
-If you want to dive into details check out the [docs](/docs/v2/).
+More details are found by [clicking the following](https://starcoin.org/en/developer/blog/what_is_starcoin/)
 
-# How do I use Starswap?
+### What is STC token?
 
-First you'll need an [Ethereum Wallet](https://ethereum.org/en/wallets/) and some [ETH](https://ethereum.org/en/get-eth/). Once completed, head over to the [app](http://app.starswap.xyz/) to start using the protocol to provide liquidity or swap tokens. Remember that each transaction on Ethereum costs ETH (this is called the ["gas fee"](https://www.youtube.com/watch?v=AJvzNICwcwc&feature=emb_title) and it's paid to miners to keep the network running).
+STC is a native coin on the Starcoin, which can be obtained by swapping, mining, trading, or participating in airdrops
 
-# How does Starswap work?
+More details are found by [clicking the following](https://starcoin.org/en/overview/economy_whitepaper/)
 
-Starswap is an [automated liquidity protocol](https://ethereum.org/en/get-eth/#dex). In practical terms this means there are template smart contracts that define a standard way to make liquidity pools and corresponding markets that are compatible with each other. There is no orderbook, no centralized party and no central facilitator of trade. Each pool is defined by a smart contract that includes a few functions to enable swapping tokens, adding liquidity and more. At its core each pool uses the function `x*y=k` to maintain a curve along which trades can happen. The pools keep track of reserves(liquidity) and updates those reserves every single time someone trades. Because the reserves are automatically rebalanced, a Starswap pool can always be used to buy or sell a token without requiring a counterparty on the other side of a trade.
+### What is STAR token?
 
-For a more in-depth description. Check out the [How Starswap works](/docs/v2/protocol-overview/how-Starswap-works/) from the documentation.
+STAR is a token on the Starswap for platform governance, which can be obtained by exchanging in the Swap or by staking the LP token in the Farm.
 
-# How are prices determined?
+More details are described in the [Tokenomics](https://docs.starswap.xyz/tokenomics).
 
-Prices are determined by the amount of each token in a pool. The smart contract maintains a constant using the following function: `x*y=k`. In this case `x = token0`, `y = token1`, `k = constant`. During each trade a certain amount of one token is removed from the pool for an amount of the other token. To maintain `k`, the balances held by the smart contract are adjusted during the execution of the trade, therefore changing the price.
+### What is FAI token？
 
-# I saw a token was trading at X value, but when I traded on Starswap I got a much lower value!
+FAI is the stablecoin on the Starcoin, which value is pegged to 1 USD, backed by crypto-asset $STC as collateral. It can be mined by staking STC ([fai.bfly.finance](https://fai.bfly.finance/)) or exchanged on the Swap ([starswap.xyz](https://starswap.xyz/)).
 
-Websites that show token prices, like eitherscan.io or coinmarketcap.com, typically aggregate price data from multiple sources. Some of these sources can be inaccurate, especially regarding new or low volume tokens. If a website or app says a token is worth more than what is shown on Starswap, it is due to the website’s or app's inaccurate data sources. Always check the exchange rate on the Starswap app before trading.
+### **Does Starswap support USDT or other stablecoins?**
 
-# Why is my swap failing or stuck?
+Starswap supports USDT after the cross-chain bridge goes online.
 
-You might be trying to swap a fee on transfer or deflationary token. If so, you have to increase your allowed slippage to account for the fee taken during the swap. Click on the gear for settings and adjust slippage tolerance accordingly.
+### **Is there a cross-chain bridge to transfer my USDT assets to Starswap?**
 
-Otherwise, if your transaction is taking forever or stuck pending, the gas included might be too low and the transaction will not be processed. You probably need to speed up or cancel the transaction in you wallet.
+The cross-chain bridge for Starcoin is under development and is scheduled to launch in April 2022. Starswap will add USDT and other popular assets into the supported tokens.
 
-- Fix stuck transactions in MetaMask: [https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction](https://metamask.zendesk.com/hc/en-us/articles/360015489251-How-to-Speed-Up-or-Cancel-a-Pending-Transaction)
+### Is Starswap secure?
 
-- Fix stuck transactions in Trust wallet: [https://www.publish0x.com/the-crypt/quick-guide-to-fixing-stuck-ethereum-transactions-xgdvgkv](https://www.publish0x.com/the-crypt/quick-guide-to-fixing-stuck-ethereum-transactions-xgdvgkv)
+Starswap is absolutely secure. Starswap is deployed on the Starcoin, which is highly secure and reliable by using the PoW consensus mechanism to build a two-layer network ecosystem for the on-chain governance, and adopting the extremely secure MOVE smart contract language.
 
-# Why is my approve stuck?
+### **How does Starswap contract upgrade?** 
 
-If you speed up an approve, Starswap can't detect the new transaction. Open your wallet in the interface and click "clear all" then try refreshing the page.
+Starswap contract upgrades use a time lock mechanism. Submit an upgrade plan before each update, and the upgrade can be performed after 24 hours. The next version will take the form of a DAO-based community vote upgrade.
 
-# How do I find X token?
+### What are the main risks of Starswap?
 
-If you can't find a token in the default list, find the token address using etherscan and paste that address into the search field.
+Starswap has the risk of impermanent losses or divergence loss during the on-chain trading process including mining, exchanging, and staking liquidity
 
-# How do I add a logo for a token?
+### Is Starswap open source?
 
-Starswap pulls from the trustwallet asset repository on github. [https://github.com/trustwallet/assets](https://github.com/trustwallet/assets) Add your token icon to that repo and it will appear on the frontend and on info.
+Yes. Please visit the Github:<https://github.com/Elements-Studio/starswap-core>
 
-# How can I add a token to Starswap?
+### How do I participate in the DAO management?
 
-Starswap is compatible with any ERC-20 token in the Ethereum ecosystem. If you want your project to be searchable in their interface, you should seek to be added to a reputable token list or share a link to your token using query parameters. Once loaded via link, the token will be added to their interface.
+You can use the STAR token for the platform governance for community voting to participate in the DAO management.
 
-Another option is to open a request using github [issues](https://github.com/Starswap/Starswap-frontend/issues/new?assignees=&labels=token+request&template=token-request.md&title=).
+### What should I do if the transaction waits too long or has no response?
 
-The Starswap team makes no guarantees nor provides any timeline for such requests. Nor will the team ever charge or request funds. We've added many UX features to make it easier to share a new token with communities - features such as local storage support and custom linking. Please make use of them.
+First, please try to disconnect your wallet if connected), and then re-access your wallet.
 
-# Why does my transaction cost X?
-
-Ethereum requires gas to execute each transaction. You can also check ETH gas station for the current prices required to complete transactions. Creating a Starswap pool is a slightly costlier transaction because you are executing a more complex smart contract. Read more about how gas works in Ethereum.
-
-# How can I see my liquidity provider fees?
-
-There are many community built tools like [https://www.Starswaproi.com/](https://www.Starswaproi.com/), [https://www.zapper.fi/dashboard](https://www.zapper.fi/dashboard) and [https://zerion.io/](https://zerion.io/). Starswap provides no guarantees the information on these sites is correct.
-
-# I accidentally transferred tokens directly to a pair contract, is there any way I can get them back?
-
-Starswap token pair contracts are ownerless. We have no special control over the pair contracts' functionality; because of this, any tokens accidentally transferred to the token contract itself are lost forever.
-
-# I updated my token via a proxy contract, but the Starswap information page is showing the old symbol / name!
-
-[Info.Starswap](https://info.starswap.xyz/) reads the details of new tokens when they're added to the subgraph. There may be some circumstances where an old symbol or name isn't updated if the token was updated with a proxy contract. A guide to fix this yourself is forthcoming. In the meantime, reach out with the details on our developer discord.
-
-# My swap failed with code "EXPIRED", what happened?
-
-If a swap takes more than 20 minutes to execute, the router is programmed to fail the transaction. This is to protect the user from extreme swings in prices that can occur while the transaction is pending. If this happens, your tokens will still be in your wallet, but the gas fees paid are not recoverable. To keep this from happening, use a high enough gas price to have your transaction mined in under 20 minutes. This usually falls under "Standard" or "Fast" in most gas price calculators.
-
-# Starswap tools and resources
-
-[https://github.com/Starswap/universe](https://github.com/Starswap/universe)
+refesh your page on the Chrome browser.
