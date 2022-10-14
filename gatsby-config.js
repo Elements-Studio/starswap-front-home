@@ -20,7 +20,7 @@ module.exports = {
       options: {
         bucketName: process.env.AWS_S3_BUCKET || 'NOT_SPECIFIED',
         protocol: 'https',
-        hostname: 'starswap.xyz',
+        hostname: 'home.starswap.xyz',
         acl: null
       }
     },
