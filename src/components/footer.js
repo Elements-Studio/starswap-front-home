@@ -70,11 +70,11 @@ const Footer = () => {
       <p style={{ margin: 0 }}>© {new Date().getFullYear()} Starswap</p>
       <StyledFooterLinkSection>
         <StyledFooterLink to="/about">About</StyledFooterLink>
-        <StyledFooterLink to="https://starswap.xyz" style={{ marginRight: '12px' }}>
+        <a href="https://starswap.xyz" rel="noopener noreferrer" target="_blank" style={{ marginRight: '12px' }}>
           App
-        </StyledFooterLink>
-        <StyledFooterLink to="https://docs.starswap.xyz/faq">FAQ</StyledFooterLink>
-        <StyledFooterLink to="https://t.me/StarswapEN">Telegram</StyledFooterLink>
+        </a>
+        <a rel="noopener noreferrer" target="_blank" href="https://docs.starswap.xyz/faq">FAQ</a>
+        <a href="https://t.me/StarswapEN" rel="noopener noreferrer" target="_blank">Telegram</a>
         <a href="https://twitter.com/StarswapEN" rel="noopener noreferrer" target="_blank">
           <StyledTwitter />
         </a>
