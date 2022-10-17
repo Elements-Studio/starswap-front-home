@@ -341,7 +341,7 @@ const IndexPage = props => {
         <EcosystemSection data={data} props={props} />
         <HideSmall>
           <StyledSectionHeader>
-            <a href="https://info.starswap.xyz/">{'PROTOCOL ANALYTICS →'}</a>
+            <a target="_blank" rel="noreferrer" href="https://info.starswap.xyz/">{'PROTOCOL ANALYTICS →'}</a>
           </StyledSectionHeader>
           <div
             style={{
@@ -491,7 +491,7 @@ const DeveloperSection = props => {
               Starswap is a decentralized exchange (DEX) that is deployed in a smart contract network on the Starcoin block chain. Every wallet holder on the Starcoin can freely exchange tokens on the Starswap, and become an automated mark maker (AMM) by providing and staking liquidity.
             </StyledBodySubTitle>
 
-            <Button href="https://docs.starswap.xyz/">
+            <Button target="_blank" href="https://docs.starswap.xyz/">
               <p style={{ margin: 0 }}>
                 {' '}
                 <HideSmall>Developer</HideSmall> Documentation ↗

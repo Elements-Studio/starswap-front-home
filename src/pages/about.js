@@ -103,6 +103,25 @@ const InternalLink = styled(Link)`
   }
 `
 
+const InternalLinkTo = styled.a`
+  border-radius: 8px;
+  color: ${({ theme }) => theme.textColor};
+  font-weight: 600;
+
+  &:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+  :hover {
+    transform: translate3d(2px, 2px, 10px);
+  }
+`
+
 const ExternalLink = styled.a`
   border-radius: 8px;
   color: ${({ theme }) => theme.textColor};
@@ -260,44 +279,39 @@ const About = props => {
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ paddingBottom: '4rem' }}>
-            Swap, earn, and build on the largest crypto trading protocol on Ethereum.
+            Swap, earn, and build on the leading decentralized crypto trading protocol.
           </Title>
 
           <Numbers id="about" style={{ flexDirection: 'column' }}>
             <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', margin: 0 }}>
               <h2 style={{ fontSize: '32px' }}>
-                {UniStats.exchanges}
-                <p style={{ fontSize: '14px' }}>Token Pairs </p>
+              968K
+                <p style={{ fontSize: '14px' }}>Trade Volume </p>
               </h2>
               <h2 style={{ fontSize: '32px' }}>
-                {UniStats.volume}
+              106.04K
                 <p style={{ fontSize: '14px' }}>24H Volume</p>
               </h2>
-              <h2 style={{ fontSize: '32px' }}>
-                {UniStats.liquidity}
-                <p style={{ fontSize: '14px' }}>Total Liquidity</p>
+              <h2 style={{ fontSize: '32px', textAlign: 'center' }}>
+                5
+                <p style={{ fontSize: '14px' }}>All Tokens</p>
               </h2>
-              <h2 style={{ fontSize: '32px' }}>
-                {'> 200'}
-                <p style={{ fontSize: '14px' }}>DeFi Integrations</p>
+              <h2 style={{ fontSize: '32px', textAlign: 'center'  }}>
+                4
+                <p style={{ fontSize: '14px' }}>Pools</p>
               </h2>
             </div>
           </Numbers>
           <StyledSectionFlex id="about" style={{ flexDirection: 'column' }}>
             <p>
-              Starswap empowers developers, liquidity providers and traders to participate in a financial marketplace
-              that is open and accessible to all.
+            Starswap is a decentralized exchange (DEX) that is deployed in a smart contract network on the Starcoin block chain. Every wallet holder on the Starcoin can freely exchange tokens on the Starswap, and become an automated mark maker (AMM) by providing and staking liquidity.
             </p>
-            <p>We are committed to open source software and building on the decentralized web.</p>
+            <p>Starswap was developed by Elements Studio team . It has good features of asset security, fast trading speed, low trading cost, and advanced decentralized autonomous organization (DAO) management. Therefore, Starswap is being popular in the community of blockchains and attracts many attentions around the world.</p>
 
             <div style={{ display: 'flex', width: '100%', margin: 0 }}>
-              <InternalLink to="/blog/uni">UNI token</InternalLink>
-              <InternalLink to="/whitepaper.pdf">
-                V2 Whitepaper <span style={{ fontSize: '11px' }}>↗</span>
-              </InternalLink>
-              <InternalLink to="/whitepaper-v3.pdf">
-                V3 Whitepaper <span style={{ fontSize: '11px' }}>↗</span>
-              </InternalLink>
+            <InternalLinkTo href='https://docs.starswap.xyz/' target='_blank'>Docs</InternalLinkTo>
+              <InternalLinkTo href='https://starswap.xyz' target='_blank'>App</InternalLinkTo>
+              <InternalLinkTo href='https://github.com/Elements-Studio' target='_blank'>Github <span style={{ fontSize: '11px' }}>↗</span></InternalLinkTo>
               <InternalLink to="/faq">FAQ</InternalLink>
             </div>
           </StyledSectionFlex>
@@ -307,44 +321,44 @@ const About = props => {
             <p>We are looking for talented people to join our team!</p>
 
             <span>
-              <a href="https://jobs.lever.co/Starswap">
+              <a href="https://westar.io/join-us/" target="_blank"  rel="noreferrer">
                 {' '}
-                <h3>Full list of roles available at Starswap Labs</h3>
+                <h3>Full list of roles available at Westar Labs</h3>
               </a>
             </span>
           </StyledSectionFlex>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
             <h2 style={{ width: '100%' }}>Contact</h2>
-            <p>
+            {/* <p>
               To get in touch, please email <a href="mailto:contact@starswap.xyz">contact@starswap.xyz</a>
-            </p>
+            </p> */}
 
             <p>
               We encourage anyone facing issues with their wallet, transaction or Starswap related question to join our
-              active community discord or explore the{' '}
-              <ExternalLink href={'https://help.starswap.xyz'}>help & tutorial</ExternalLink> site.
+              active community discord or explore the{' '} help & tutorial site.
+              {/* <ExternalLink href={'https://help.starswap.xyz'}>help & tutorial</ExternalLink> site. */}
             </p>
 
             <div style={{ display: 'flex', width: '100%', margin: 0 }}>
-              <ExternalLink href={'https://discord.gg/FCfyBSbCU5'}>
+              <ExternalLink href={'https://discord.com/invite/96tKt5exaE'}>
                 Discord <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
-              <ExternalLink href={'/Starswap'}>
+              <ExternalLink href={'https://twitter.com/StarswapEN'}>
                 Twitter <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
-              <ExternalLink href={'https://www.reddit.com/r/Starswap'}>
-                Reddit <span style={{ fontSize: '11px' }}>↗</span>
+              <ExternalLink href={'https://t.me/StarswapEN'}>
+                Telegram <span style={{ fontSize: '11px' }}>↗</span>
               </ExternalLink>
             </div>
           </StyledSectionFlex>
 
-          <StyledSectionFlex id="brand" style={{ flexDirection: 'column' }}>
+          {/* <StyledSectionFlex id="brand" style={{ flexDirection: 'column' }}>
             <h2 style={{ width: '100%' }}>Brand Assets</h2>
             <p>
               Download the logo and other brand assets samples <a href="/Starswap_brand_assets.zip">here</a>.
             </p>
-          </StyledSectionFlex>
+          </StyledSectionFlex> */}
         </span>
       </StyledAbout>
     </Layout>

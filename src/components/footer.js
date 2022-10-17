@@ -31,9 +31,15 @@ const StyledFooterLinkSection = styled.ul`
   flex-direction: row;
   align-items: center;
   margin: 0;
+  line-height: 1;
 `
 
 const StyledFooterLink = styled(Link)`
+  margin-right: 12px;
+  color: ${({ theme }) => theme.textColor};
+`
+
+const StyledToLink = styled.a`
   margin-right: 12px;
   color: ${({ theme }) => theme.textColor};
 `
@@ -70,11 +76,9 @@ const Footer = () => {
       <p style={{ margin: 0 }}>© {new Date().getFullYear()} Starswap</p>
       <StyledFooterLinkSection>
         <StyledFooterLink to="/about">About</StyledFooterLink>
-        <a href="https://starswap.xyz" rel="noopener noreferrer" target="_blank" style={{ marginRight: '12px' }}>
-          App
-        </a>
-        <a rel="noopener noreferrer" target="_blank" href="https://docs.starswap.xyz/faq">FAQ</a>
-        <a href="https://t.me/StarswapEN" rel="noopener noreferrer" target="_blank">Telegram</a>
+        <StyledToLink href="https://starswap.xyz" rel="noopener noreferrer" target="_blank">App</StyledToLink>
+        <StyledFooterLink to="/faq">FAQ</StyledFooterLink>
+        <StyledToLink href="https://t.me/StarswapEN" rel="noopener noreferrer" target="_blank">Telegram</StyledToLink>
         <a href="https://twitter.com/StarswapEN" rel="noopener noreferrer" target="_blank">
           <StyledTwitter />
         </a>

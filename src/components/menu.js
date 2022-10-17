@@ -133,6 +133,39 @@ const StyledMenuTitle = styled.span`
   transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
 `
 
+const StyledMenuTitleTo = styled.a`
+  text-decoration: none;
+  margin: 0px;
+  border-radius: 0.5rem;
+  font-weight: 400;
+  color: ${({ theme }) => theme.textColor};
+  width: fit-content;
+  font-size: 1.15rem;
+  padding: 0 0 0.2rem;
+  :focus {
+    outline: 0;
+  }
+  a:focus {
+    opacity: 0.5;
+  }
+
+  cursor: pointer;
+  :hover {
+    color: ${({ theme }) => theme.colors.grey7};
+  }
+
+  @media (max-width: 960px) {
+    margin-bottom: 1rem;
+    user-select: none;
+    :hover nav,
+    &:focus-within nav,
+    nav:hover {
+      padding: 0;
+    }
+  }
+  transition: transform 0.45s cubic-bezier(0.19, 1, 0.22, 1);
+`
+
 const StyledMenuItem = styled.span`
   text-decoration: none;
   margin: 0px;
@@ -196,11 +229,14 @@ const StyledDescription = styled.p`
 
 export default function Menu(props) {
   return (
-    <StyledMenu tabIndex={0}>
+      props?.data?.link
+      ? <StyledMenuTitleTo target='_blank' href={props.data.link} style={{ marginRight: '0.25rem' }}>{props.data.name} </StyledMenuTitleTo> 
+      : (
+        <StyledMenu tabIndex={0}>
       <StyledMenuTitle>
         <span style={{ marginRight: '0.25rem' }}>{props.data.name} </span>
         <MenuFlyout>
-          {props.data.sublinks.map((item, index) => {
+          {props?.data?.sublinks ? props.data.sublinks.map((item, index) => {
             return (
               <StyledMenuItem tabindex={index} key={index}>
                 {item.link.split('.').slice(-1)[0] === 'pdf' ? (
@@ -215,9 +251,12 @@ export default function Menu(props) {
                 )}
               </StyledMenuItem>
             )
-          })}
+          })
+          : null
+        }
         </MenuFlyout>
       </StyledMenuTitle>
     </StyledMenu>
+      )
   )
 }

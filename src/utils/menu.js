@@ -1,14 +1,19 @@
 const menu = [
   {
-    name: 'Developers',
-    sublinks: [
-      {
-        name: 'Docs',
-        link: 'https://docs.starswap.xyz/'
-      },
-      { name: 'GitHub', link: 'https://github.com/Elements-Studio' },
-    ]
+    name: 'Docs',
+    link: 'https://docs.starswap.xyz/'
   },
+  { name: 'GitHub', link: 'https://github.com/Elements-Studio' },
+  // {
+  //   name: 'Developers',
+  //   sublinks: [
+  //     {
+  //       name: 'Docs',
+  //       link: 'https://docs.starswap.xyz/'
+  //     },
+  //     { name: 'GitHub', link: 'https://github.com/Elements-Studio' },
+  //   ]
+  // },
   // {
   //   name: 'Governance',
   //   sublinks: [
@@ -33,10 +38,10 @@ const menu = [
   {
     name: 'More',
     sublinks: [
-      {
-        name: 'Blog',
-        link: '/blog'
-      },
+      // {
+      //   name: 'Blog',
+      //   link: '/blog'
+      // },
       {
         name: 'About',
         link: '/about'
