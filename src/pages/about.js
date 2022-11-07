@@ -12,7 +12,8 @@ import { Link } from 'gatsby'
 
 import Layout from '../layouts'
 import SEO from '../components/seo'
-import BG from '../components/bg'
+import LinkArrow from '../images/link_arrow.png'
+
 
 const StyledAbout = styled.div`
   display: grid;
@@ -39,8 +40,6 @@ const StyledSectionFlex = styled.div`
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
-  max-width: 960px;
-  margin-left: 5rem;
   @media (max-width: 1024px) {
     padding: 1rem;
     margin-top: 0rem;
@@ -120,6 +119,11 @@ const InternalLinkTo = styled.a`
   :hover {
     transform: translate3d(2px, 2px, 10px);
   }
+`
+
+const SubTitle = styled.div`
+  font-size: 65px;
+  color: #32F0C0;
 `
 
 const ExternalLink = styled.a`
@@ -273,82 +277,67 @@ const About = props => {
 
   return (
     <Layout path={props.location.pathname}>
-      <BG />
-
       <SEO title="About" path={props.location.pathname} />
       <StyledAbout>
         <span style={{ marginTop: '5rem' }}>
           <Title style={{ paddingBottom: '4rem' }}>
-            Swap, earn, and build on the leading decentralized crypto trading protocol.
+            <span style={{color: '#32F0C0'}}>Pioneering DEX with</span>
+            <div style={{margin: '30px 0'}}>Dao Governance <span style={{color: '#32F0C0'}}>in</span></div>
+            <span style={{color: '#32F0C0'}}>Move Ecosystem</span>
           </Title>
 
           <Numbers id="about" style={{ flexDirection: 'column' }}>
             <div style={{ display: 'flex', width: '100%', justifyContent: 'space-between', margin: 0 }}>
-              <h2 style={{ fontSize: '32px' }}>
+              <h2 style={{ fontSize: '60px', textAlign: 'center' }}>
               968K
-                <p style={{ fontSize: '14px' }}>Trade Volume </p>
+                <p style={{ fontSize: '22px', marginTop: '15px' }}>Trade Volume </p>
               </h2>
-              <h2 style={{ fontSize: '32px' }}>
+              <h2 style={{ fontSize: '60px', textAlign: 'center' }}>
               106.04K
-                <p style={{ fontSize: '14px' }}>24H Volume</p>
+                <p style={{ fontSize: '22px', marginTop: '15px' }}>24H Volume</p>
               </h2>
-              <h2 style={{ fontSize: '32px', textAlign: 'center' }}>
+              <h2 style={{ fontSize: '60px', textAlign: 'center' }}>
                 5
-                <p style={{ fontSize: '14px' }}>All Tokens</p>
+                <p style={{ fontSize: '22px', marginTop: '15px' }}>All Tokens</p>
               </h2>
-              <h2 style={{ fontSize: '32px', textAlign: 'center'  }}>
+              <h2 style={{ fontSize: '60px', textAlign: 'center' }}>
                 4
-                <p style={{ fontSize: '14px' }}>Pools</p>
+                <p style={{ fontSize: '22px', marginTop: '15px' }}>Pools</p>
               </h2>
             </div>
           </Numbers>
-          <StyledSectionFlex id="about" style={{ flexDirection: 'column' }}>
-            <p>
-            Starswap is a decentralized exchange (DEX) that is deployed in a smart contract network on the Starcoin block chain. Every wallet holder on the Starcoin can freely exchange tokens on the Starswap, and become an automated mark maker (AMM) by providing and staking liquidity.
-            </p>
-            <p>Starswap was developed by Elements Studio team . It has good features of asset security, fast trading speed, low trading cost, and advanced decentralized autonomous organization (DAO) management. Therefore, Starswap is being popular in the community of blockchains and attracts many attentions around the world.</p>
-
-            <div style={{ display: 'flex', width: '100%', margin: 0 }}>
-            <InternalLinkTo href='https://docs.starswap.xyz/' target='_blank'>Docs</InternalLinkTo>
-              <InternalLinkTo href='https://starswap.xyz' target='_blank'>App</InternalLinkTo>
-              <InternalLinkTo href='https://github.com/Elements-Studio' target='_blank'>Github <span style={{ fontSize: '11px' }}>↗</span></InternalLinkTo>
-              <InternalLink to="/faq">FAQ</InternalLink>
+          <SubTitle>ABOUT US</SubTitle>
+          <StyledSectionFlex id="about" style={{ fontSize: '27px' }}>
+            <div>
+              <p>
+              Starswap is a decentralized exchange (DEX) that is deployed in a smart contract network on the Starcoin block chain. Every wallet holder on the Starcoin can freely exchange tokens on the Starswap, and become an automated mark maker (AMM) by providing and staking liquidity.
+              </p>
+            <div style={{ display: 'flex', width: '100%', margin: 0, fontSize: '24px' }}>
+            <InternalLinkTo href='https://docs.starswap.xyz/' target='_blank'>Docs <img style={{marginLeft: '10px', verticalAlign: 'middle', marginBottom: '0'}} src={LinkArrow} /></InternalLinkTo>
+              <InternalLinkTo href='https://starswap.xyz' target='_blank'>App <img style={{marginLeft: '10px', verticalAlign: 'middle', marginBottom: '0'}} src={LinkArrow} /></InternalLinkTo>
+              <InternalLinkTo href='https://github.com/Elements-Studio' target='_blank'>Github <img style={{marginLeft: '10px', verticalAlign: 'middle', marginBottom: '0'}} src={LinkArrow} /></InternalLinkTo>
+              <InternalLink to="/faq">FAQ <img style={{marginLeft: '10px', verticalAlign: 'middle', marginBottom: '0'}} src={LinkArrow} /></InternalLink>
             </div>
-          </StyledSectionFlex>
-
-          <StyledSectionFlex id="jobs" style={{ flexDirection: 'column' }}>
-            <h2 style={{ width: '100%' }}>Jobs</h2>
-            <p>We are looking for talented people to join our team!</p>
-
-            <span>
-              <a href="https://westar.io/join-us/" target="_blank"  rel="noreferrer">
-                {' '}
-                <h3>Full list of roles available at Westar Labs</h3>
-              </a>
-            </span>
+            </div>
+            <p style={{marginTop: '100px'}}>Starswap was developed by Elements Studio team . It has good features of asset security, fast trading speed, low trading cost, and advanced decentralized autonomous organization (DAO) management. Therefore, Starswap is being popular in the community of blockchains and attracts many attentions around the world.</p>
           </StyledSectionFlex>
 
           <StyledSectionFlex id="contact" style={{ flexDirection: 'column' }}>
-            <h2 style={{ width: '100%' }}>Contact</h2>
-            {/* <p>
-              To get in touch, please email <a href="mailto:contact@starswap.xyz">contact@starswap.xyz</a>
-            </p> */}
-
-            <p>
+            <SubTitle>CONTACT</SubTitle>
+            <p style={{fontSize: '27px'}}>
               We encourage anyone facing issues with their wallet, transaction or Starswap related question to join our
               active community discord or explore the{' '} help & tutorial site.
-              {/* <ExternalLink href={'https://help.starswap.xyz'}>help & tutorial</ExternalLink> site. */}
             </p>
 
-            <div style={{ display: 'flex', width: '100%', margin: 0 }}>
+            <div style={{ display: 'flex', width: '100%', margin: 0, fontSize: '24px' }}>
               <ExternalLink href={'https://discord.com/invite/96tKt5exaE'}>
-                Discord <span style={{ fontSize: '11px' }}>↗</span>
+                Discord <img style={{marginLeft: '10px', verticalAlign: 'middle', marginBottom: '0'}} src={LinkArrow} />
               </ExternalLink>
               <ExternalLink href={'https://twitter.com/StarswapEN'}>
-                Twitter <span style={{ fontSize: '11px' }}>↗</span>
+                Twitter <img style={{marginLeft: '10px', verticalAlign: 'middle', marginBottom: '0'}} src={LinkArrow} />
               </ExternalLink>
               <ExternalLink href={'https://t.me/StarswapEN'}>
-                Telegram <span style={{ fontSize: '11px' }}>↗</span>
+                Telegram <img style={{marginLeft: '10px', verticalAlign: 'middle', marginBottom: '0'}} src={LinkArrow} />
               </ExternalLink>
             </div>
           </StyledSectionFlex>

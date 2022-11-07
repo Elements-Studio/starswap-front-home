@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import Twitter from '../images/twitter.inline.svg'
 import Github from '../images/github.inline.svg'
 import Discord from '../images/discord.inline.svg'
+import Telegram from '../images/telegram.png'
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -20,10 +21,6 @@ const StyledFooter = styled.footer`
   @media (max-width: 960px) {
     padding: 1rem;
   }
-
-  @media (max-width: 600px) {
-    font-size: 12px;
-  }
 `
 
 const StyledFooterLinkSection = styled.ul`
@@ -35,12 +32,12 @@ const StyledFooterLinkSection = styled.ul`
 `
 
 const StyledFooterLink = styled(Link)`
-  margin-right: 12px;
+  margin-right: 50px;
   color: ${({ theme }) => theme.textColor};
 `
 
 const StyledToLink = styled.a`
-  margin-right: 12px;
+  margin-right: 50px;
   color: ${({ theme }) => theme.textColor};
 `
 
@@ -50,7 +47,7 @@ const StyledTwitter = styled(Twitter)`
   }
   width: 16px;
   height: 16px;
-  margin-right: 12px;
+  margin-right: 50px;
 `
 
 const StyledDiscord = styled(Discord)`
@@ -67,7 +64,7 @@ const StyledGithub = styled(Github)`
   }
   width: 16px;
   height: 16px;
-  margin-right: 12px;
+  margin-right: 50px;
 `
 
 const Footer = () => {
@@ -78,7 +75,9 @@ const Footer = () => {
         <StyledFooterLink to="/about">About</StyledFooterLink>
         <StyledToLink href="https://starswap.xyz" rel="noopener noreferrer" target="_blank">App</StyledToLink>
         <StyledFooterLink to="/faq">FAQ</StyledFooterLink>
-        <StyledToLink href="https://t.me/StarswapEN" rel="noopener noreferrer" target="_blank">Telegram</StyledToLink>
+        <a href="http://t.me/StarswapEN" rel="noopener noreferrer" target="_blank">
+          <img src={Telegram} style={{width: '16px', height: '16px', marginBottom: '0', marginRight: '50px'}} />
+        </a>
         <a href="https://twitter.com/StarswapEN" rel="noopener noreferrer" target="_blank">
           <StyledTwitter />
         </a>

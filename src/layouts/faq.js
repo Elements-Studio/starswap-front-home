@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import Layout from '.'
 import SEO from '../components/seo'
 
-import BG from '../components/bg'
 
 import '../styles/prism-github.css'
 
@@ -38,7 +37,7 @@ const StyledDocs = styled.div`
 
 const StyledMDX = styled.div`
   min-width: 550px;
-  max-width: 650px;
+  max-width: 1400px;
   padding: 0;
   margin-bottom: 3rem;
   a {
@@ -61,6 +60,18 @@ const StyledMDX = styled.div`
   }
   h2 {
     margin-top: 2rem;
+  }
+  h3 {
+    font-size: 37px;
+    margin-top: 120px;
+  }
+  p {
+    font-size: 27px;
+  }
+  a {
+    color: #32F0C0;
+    margin-top: 60px;
+    display: inline-block;
   }
   blockquote h1 {
     margin-top: unset;
@@ -85,6 +96,11 @@ const StyledPageTitle = styled.div`
     display: inherit;
     font-size: 0.825rem;
   }
+`
+
+const SubTitle = styled.div`
+  font-size: 65px;
+  color: #32F0C0;
 `
 
 const Docs = props => {
@@ -115,7 +131,6 @@ const Docs = props => {
 
   return (
     <Layout path={props.location.pathname} isDocs={false}>
-      <BG />
       <SEO title={props.pageContext.frontmatter.title} path={props.location.pathname} />
       <GlobalStyle />
       {data.allMdx.edges
@@ -140,11 +155,9 @@ const Docs = props => {
           )
         })}
       <StyledDocs id="docs-header">
-        <span>
+        <span style={{width: '100%'}}>
           <StyledPageTitle>
-            <h1 className={'title'} style={{ fontSize: '72px' }}>
-              {props.pageContext.frontmatter.title}
-            </h1>
+            <SubTitle>{props.pageContext.frontmatter.title}</SubTitle>
           </StyledPageTitle>
           <span>
             <StyledMDX>{props.children}</StyledMDX>

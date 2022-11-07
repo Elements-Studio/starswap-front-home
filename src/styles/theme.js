@@ -132,13 +132,13 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 16px;
     font-variant: none;
-    background-color: ${({ theme }) => theme.backgroundColor};
+    // background-color: ${({ theme }) => theme.backgroundColor};
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     overflow-y: scroll;
     width: 100%;
@@ -154,11 +154,11 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.55;
-    max-width: 1440px;
     width: 100%;
     margin: 0px auto;
     font-weight: 400 !important;
     color: ${({ theme }) => theme.textColor};
+    padding: 0 100px;
     
     @media (min-width: 1441px) {
         overflow-x: visible;

@@ -230,7 +230,7 @@ const StyledDescription = styled.p`
 export default function Menu(props) {
   return (
       props?.data?.link
-      ? <StyledMenuTitleTo target='_blank' href={props.data.link} style={{ marginRight: '0.25rem' }}>{props.data.name} </StyledMenuTitleTo> 
+      ? <StyledMenuTitleTo target='_blank' href={props.data.link} style={{marginRight: '0.25rem', color: props?.data?.color ? props.data.color : ''}}>{props.data.name} </StyledMenuTitleTo> 
       : (
         <StyledMenu tabIndex={0}>
       <StyledMenuTitle>

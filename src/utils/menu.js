@@ -1,6 +1,7 @@
 const menu = [
   {
     name: 'Docs',
+    color: '#32F0C0',
     link: 'https://docs.starswap.xyz/'
   },
   { name: 'GitHub', link: 'https://github.com/Elements-Studio' },
@@ -35,13 +36,10 @@ const menu = [
       { name: 'Telegram', link: 'https://t.me/StarswapEN' }
     ]
   },
+  { name: 'Jobs', link: 'https://westar.io/join-us' },
   {
     name: 'More',
     sublinks: [
-      // {
-      //   name: 'Blog',
-      //   link: '/blog'
-      // },
       {
         name: 'About',
         link: '/about'

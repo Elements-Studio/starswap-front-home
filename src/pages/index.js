@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
@@ -17,6 +17,12 @@ import Discord from '../images/discord.inline.svg'
 import DevImage from '../images/developer.png'
 import GovImage from '../images/governance.png'
 import AppsImage from '../images/apps.png'
+import RightImage from '../images/right_arrow.png'
+import BottomImage from '../images/bottom_arrow.png'
+import LineImage from '../images/line.svg';
+import Telegram from '../images/telegram.png'
+
+import '../styles/home.css'
 
 const BGCard = styled.span`
   width: 100vw;
@@ -51,10 +57,10 @@ const StyledBody = styled.div`
 const StyledTitle = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   will-change: transform;
   align-items: flex-start;
-  height: 80vh;
+  margin-top: 378px;
+  height: 60vh;
   margin-bottom: 4rem;
 `
 
@@ -81,7 +87,6 @@ const StyledBodyTitle = styled.h1`
   }
 `
 const StyledBodySubTitle = styled.h2`
-  max-width: 720px;
   line-height: 125%;
   font-weight: 400;
   text-align: left;
@@ -94,6 +99,7 @@ const StyledBodySubTitle = styled.h2`
 const StyledBodySubText = styled.h3`
   max-width: 960px;
   line-height: 140%;
+  font-size: 27px;
   opacity: 0.8;
   @media (max-width: 640px) {
     text-align: left;
@@ -103,7 +109,7 @@ const StyledBodySubText = styled.h3`
 const StyledSectionTitle = styled.h3`
   max-width: 960px;
   line-height: 140%;
-  font-size: 32px;
+  font-size: 37px;
   @media (max-width: 640px) {
     text-align: left;
   }
@@ -291,16 +297,10 @@ const IndexPage = props => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout path={props.location.pathname}>
-      <BGCard>
-        {/* <CardNoise /> */}
-        <CardGlimmerImage isDark={isDark} />
-        <CardBGImage isDark={isDark} />
-        {/* <CardFade /> */}
-      </BGCard>
       <SEO
         title="Home"
         path={props.location.pathname}
@@ -309,8 +309,9 @@ const IndexPage = props => {
       <StyledBody>
         <StyledTitle>
           <StyledBodyTitle>
-            <span style={{ fontWeight: 200 }}>STARSWAP</span>
-            <StyledPinkGlimmer /> PROTOCOL
+            <span style={{color: '#32F0C0'}}>THE FIRST</span>
+            <div style={{marginTop: '30px'}}>FULL-FUNCTIONAL DEX</div>
+            <div style={{color: '#32F0C0', marginTop: '30px', marginBottom: '30px'}}>on Aptos and Starcoin</div>
           </StyledBodyTitle>
           <StyledBodySubTitle>
             {'Swap, earn, and build on the leading decentralized crypto trading protocol.'}
@@ -318,8 +319,9 @@ const IndexPage = props => {
 
           <StyledTradeLink
             style={{
-              background: `linear-gradient(128.17deg, #BD00FF -14.78%, #FF1F8A 110.05%)`,
-              color: 'white'
+              background: 'transparent',
+              color: 'white',
+              border: '1px solid #32F0C0'
             }}
             target="_blank"
             href="https://starswap.xyz/"
@@ -327,6 +329,9 @@ const IndexPage = props => {
             Launch App
           </StyledTradeLink>
           <StyledSocialRow>
+            <a href="http://t.me/StarswapEN" rel="noopener noreferrer" target="_blank">
+              <img src={Telegram} style={{width: '24px', height: '24px', marginBottom: '0'}} />
+            </a>
             <a href="https://twitter.com/StarswapEN">
               <StyledTwitter />
             </a>
@@ -341,7 +346,8 @@ const IndexPage = props => {
         <EcosystemSection data={data} props={props} />
         <HideSmall>
           <StyledSectionHeader>
-            <a target="_blank" rel="noreferrer" href="https://info.starswap.xyz/">{'PROTOCOL ANALYTICS →'}</a>
+            <a target="_blank" rel="noreferrer" href="https://info.starswap.xyz/" style={{display: 'flex', justifyContent: 'flex-end'}}><img style={{ width: '70px', height: '70px', marginRight: '20px'}} src={BottomImage} /> PROTOCOL <span style={{color: '#32F0C0'}}>ANALYTICS</span></a>
+            <img src={LineImage} />
           </StyledSectionHeader>
           <div
             style={{
@@ -357,7 +363,7 @@ const IndexPage = props => {
         </HideSmall>
         <DeveloperSection data={data} props={props} />
       </StyledBody>
-      <BG />
+      {/* <BG /> */}
     </Layout>
   )
 }
@@ -365,11 +371,12 @@ const IndexPage = props => {
 export default IndexPage
 
 const StyledSectionHeader = styled.h1`
-  font-size: 20px;
+  font-size: 65px;
   white-space: wrap;
   overflow-wrap: normal;
-  max-width: 900px;
+  text-align: right;
   font-weight: 500;
+  margin-top: 89px;
 
   a {
     color: ${({ theme }) => theme.textColor};
@@ -460,14 +467,21 @@ const EcosystemSection = () => {
   return (
     <StyledSection>
       <StyledItemRow>
-        <span>
-          <StyledSectionHeader>{'Starswap ECOSYSTEM →'}</StyledSectionHeader>
-          <StyledSectionTitle>A growing network of DeFi Apps.</StyledSectionTitle>
-          <StyledBodySubText style={{ marginRight: '48px' }}>
-            Developers, traders, and liquidity providers participate together in a financial marketplace that is open
-            and accessible to all.
-          </StyledBodySubText>
-        </span>
+          <div style={{display: 'flex', width: '100%'}}>
+          <StyledSectionHeader>
+            <div style={{fontSize: '60px'}}>
+              <div style={{display: 'flex'}}>STARSWAP <img style={{ width: '70px', height: '70px', marginLeft: '20px'}} src={RightImage} /></div>
+              <div style={{color: '#32F0C0', textAlign: 'left'}}>ECOSYSTEM</div>
+            </div>
+          </StyledSectionHeader>
+          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'end', marginLeft: '360px'}}>
+            <StyledSectionTitle>A growing network of DeFi Apps.</StyledSectionTitle>
+            <StyledBodySubText>
+              Developers, traders, and liquidity providers participate together in a financial marketplace that is open
+              and accessible to all.
+            </StyledBodySubText>
+          </div>
+          </div>
         {/* <AppsCard>
           <h1>200+</h1>
           <p>DeFi Integrations</p>
@@ -477,93 +491,123 @@ const EcosystemSection = () => {
   )
 }
 
-const DeveloperSection = props => {
+const DeveloperSection = () => {
   return (
-    <>
-      <StyledSection>
-        <StyledSectionHeader>{'DEVELOPERS →'}</StyledSectionHeader>
-        <StyledItemRow>
-          <DeveloperCard
-            style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', width: '100%' }}
-          >
+    <StyledSection style={{marginTop: '130px'}}>
+      <StyledItemRow>
+          <div style={{display: 'flex', justifyContent: 'space-around'}}>
+          <StyledSectionHeader style={{marginTop: '0'}}>
+            <div style={{fontSize: '60px', textAlign: 'left'}}>
+              <div style={{display: 'flex'}}>DEVELOPER <img style={{ width: '70px', height: '70px', marginLeft: '20px'}} src={RightImage} /></div>
+              <div style={{color: '#32F0C0'}}>DOCUMENTATION</div>
+            </div>
+          </StyledSectionHeader>
+          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'start', alignItems: 'start', marginLeft: '190px'}}>
             <StyledSectionTitle>Superpowers for DeFi developers.</StyledSectionTitle>
-            <StyledBodySubTitle style={{ fontSize: '20px' }}>
-              Starswap is a decentralized exchange (DEX) that is deployed in a smart contract network on the Starcoin block chain. Every wallet holder on the Starcoin can freely exchange tokens on the Starswap, and become an automated mark maker (AMM) by providing and staking liquidity.
-            </StyledBodySubTitle>
-
-            <Button target="_blank" href="https://docs.starswap.xyz/">
-              <p style={{ margin: 0 }}>
-                {' '}
-                <HideSmall>Developer</HideSmall> Documentation ↗
-              </p>
-            </Button>
-          </DeveloperCard>
-          {/* <GrantsCard>
-            <StyledProductImage fadeIn={false} fluid={props.data.grants.childImageSharp.fluid} />
-            <StyledBodySubTitle>Apply for the Starswap Developer Grants Program</StyledBodySubTitle>
-            <p>
-              Get paid to build the future of finance. Starswap Governance offers grant funding for people building apps,
-              tools, and activities on the Starswap Protocol.
-            </p>
-            <Button href="https://unigrants.org/" outlined>
-              <p style={{ margin: 0 }}>Learn more ↗</p>
-            </Button>
-          </GrantsCard> */}
-        </StyledItemRow>
-      </StyledSection>
-
-      {/* <StyledSection>
-        <StyledSectionHeader>{'GOVERNANCE →'}</StyledSectionHeader>
-        <StyledItemRow>
-          <GovernanceCard style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-            <span>
-              <StyledSectionTitle>Governed by the community.</StyledSectionTitle>
-              <StyledBodySubTitle style={{ fontSize: '20px' }}>
-                The Starswap Protocol is governed by a decentralized community of UNI token holders and their delegates
-                who propose and vote on upgrades to the protocol.
-              </StyledBodySubTitle>
-            </span>
-
-            <Button href="https://docs.starswap.xyz/protocol/concepts/governance/guide-to-voting" outlined>
-              <p style={{ margin: 0 }}>Read more </p>
-            </Button>
-          </GovernanceCard>
-          <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
-            <Button style={{ borderRadius: '20px' }} href="https://gov.starswap.xyz" outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                  Governance Forum <span style={{ fontSize: '16px' }}>↗</span>
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                  Participate by proposing upgrades and discussing the future of the protocol with the Starswap
-                  community.
-                </p>
-              </div>
-            </Button>
-            <Button style={{ borderRadius: '20px' }} href="https://sybil.org/" outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                  Sybil <span style={{ fontSize: '16px' }}>↗</span>
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                  Vote on offchain proposals with the Snapshot interface. Votes are weighted by the number of UNI
-                  delegates.
-                </p>
-              </div>
-            </Button>
-            <Button style={{ width: '100%', borderRadius: '20px' }} href="https://app.starswap.xyz/#/vote" outlined>
-              <div style={{ padding: '1rem' }}>
-                <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
-                  Governance Portal <span style={{ fontSize: '16px' }}>↗</span>
-                </StyledBodySubTitle>
-                <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
-                  Vote on official Starswap governance proposals and view past proposals.{' '}
-                </p>
-              </div>
-            </Button>
-          </StyledItemColumn>
-        </StyledItemRow>
-      </StyledSection> */}
-    </>
+            <StyledBodySubText style={{ textAlign: 'left' }}>
+              Starswap is a decentralized exchange (DEX) that is deployed in a smart contract network on the Starcoin block chain. 
+            </StyledBodySubText>
+            <StyledBodySubText style={{ textAlign: 'left' }}>
+              Every wallet holder on the Starcoin can freely exchange tokens on the Starswap, and become an automated mark maker (AMM) by providing and staking liquidity.
+            </StyledBodySubText>
+          </div>
+          </div>
+        {/* <AppsCard>
+          <h1>200+</h1>
+          <p>DeFi Integrations</p>
+        </AppsCard> */}
+      </StyledItemRow>
+    </StyledSection>
   )
 }
+
+// const DeveloperSection = props => {
+//   return (
+//     <>
+//       <StyledSection>
+//         <StyledSectionHeader>{'DEVELOPERS →'}</StyledSectionHeader>
+//         <StyledItemRow>
+//           <DeveloperCard
+//             style={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', width: '100%' }}
+//           >
+//             <StyledSectionTitle>Superpowers for DeFi developers.</StyledSectionTitle>
+//             <StyledBodySubTitle style={{ fontSize: '20px' }}>
+//               Starswap is a decentralized exchange (DEX) that is deployed in a smart contract network on the Starcoin block chain. Every wallet holder on the Starcoin can freely exchange tokens on the Starswap, and become an automated mark maker (AMM) by providing and staking liquidity.
+//             </StyledBodySubTitle>
+
+//             <Button target="_blank" href="https://docs.starswap.xyz/">
+//               <p style={{ margin: 0 }}>
+//                 {' '}
+//                 <HideSmall>Developer</HideSmall> Documentation ↗
+//               </p>
+//             </Button>
+//           </DeveloperCard>
+//           {/* <GrantsCard>
+//             <StyledProductImage fadeIn={false} fluid={props.data.grants.childImageSharp.fluid} />
+//             <StyledBodySubTitle>Apply for the Starswap Developer Grants Program</StyledBodySubTitle>
+//             <p>
+//               Get paid to build the future of finance. Starswap Governance offers grant funding for people building apps,
+//               tools, and activities on the Starswap Protocol.
+//             </p>
+//             <Button href="https://unigrants.org/" outlined>
+//               <p style={{ margin: 0 }}>Learn more ↗</p>
+//             </Button>
+//           </GrantsCard> */}
+//         </StyledItemRow>
+//       </StyledSection>
+
+//       {/* <StyledSection>
+//         <StyledSectionHeader>{'GOVERNANCE →'}</StyledSectionHeader>
+//         <StyledItemRow>
+//           <GovernanceCard style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+//             <span>
+//               <StyledSectionTitle>Governed by the community.</StyledSectionTitle>
+//               <StyledBodySubTitle style={{ fontSize: '20px' }}>
+//                 The Starswap Protocol is governed by a decentralized community of UNI token holders and their delegates
+//                 who propose and vote on upgrades to the protocol.
+//               </StyledBodySubTitle>
+//             </span>
+
+//             <Button href="https://docs.starswap.xyz/protocol/concepts/governance/guide-to-voting" outlined>
+//               <p style={{ margin: 0 }}>Read more </p>
+//             </Button>
+//           </GovernanceCard>
+//           <StyledItemColumn style={{ display: 'flex', flexDirection: 'column' }}>
+//             <Button style={{ borderRadius: '20px' }} href="https://gov.starswap.xyz" outlined>
+//               <div style={{ padding: '1rem' }}>
+//                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+//                   Governance Forum <span style={{ fontSize: '16px' }}>↗</span>
+//                 </StyledBodySubTitle>
+//                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+//                   Participate by proposing upgrades and discussing the future of the protocol with the Starswap
+//                   community.
+//                 </p>
+//               </div>
+//             </Button>
+//             <Button style={{ borderRadius: '20px' }} href="https://sybil.org/" outlined>
+//               <div style={{ padding: '1rem' }}>
+//                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+//                   Sybil <span style={{ fontSize: '16px' }}>↗</span>
+//                 </StyledBodySubTitle>
+//                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+//                   Vote on offchain proposals with the Snapshot interface. Votes are weighted by the number of UNI
+//                   delegates.
+//                 </p>
+//               </div>
+//             </Button>
+//             <Button style={{ width: '100%', borderRadius: '20px' }} href="https://app.starswap.xyz/#/vote" outlined>
+//               <div style={{ padding: '1rem' }}>
+//                 <StyledBodySubTitle style={{ marginBottom: '0.25rem' }}>
+//                   Governance Portal <span style={{ fontSize: '16px' }}>↗</span>
+//                 </StyledBodySubTitle>
+//                 <p style={{ textAlign: 'left', margin: '0', opacity: '0.6', fontSize: '16px', fontWeight: 400 }}>
+//                   Vote on official Starswap governance proposals and view past proposals.{' '}
+//                 </p>
+//               </div>
+//             </Button>
+//           </StyledItemColumn>
+//         </StyledItemRow>
+//       </StyledSection> */}
+//     </>
+//   )
+// }
