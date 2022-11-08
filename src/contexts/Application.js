@@ -57,13 +57,13 @@ export default function Provider({ children }) {
 export function Updater() {
   const [, { updateDarkMode }] = useApplicationContext()
   useEffect(() => {
-    const root = window.document.documentElement
-    const initialColorValue = root.style.getPropertyValue('--initial-color-mode')
-    if (initialColorValue === 'dark') {
-      updateDarkMode(DARK_MODE_OPTION.DARK)
-    } else {
-      updateDarkMode(DARK_MODE_OPTION.DARK.LIGHT)
-    }
+    // const root = window.document.documentElement
+    // const initialColorValue = root.style.getPropertyValue('--initial-color-mode')
+    // if (initialColorValue === 'dark') {
+    //   updateDarkMode(DARK_MODE_OPTION.DARK)
+    // } else {
+    //   updateDarkMode(DARK_MODE_OPTION.DARK.LIGHT)
+    // }
   }, [])
   return null
 }

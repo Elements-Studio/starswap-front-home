@@ -26,11 +26,11 @@ const MagicScriptTag = () => {
     return 'light';
   }
 
-  const colorMode = getInitialColorMode();
+  // const colorMode = getInitialColorMode();
 
-  const root = document.documentElement;
+  // const root = document.documentElement;
 
-  root.style.setProperty('--initial-color-mode', colorMode);
+  // root.style.setProperty('--initial-color-mode', colorMode);
 })()`
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: codeToRunOnClient }} />

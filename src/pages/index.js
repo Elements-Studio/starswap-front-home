@@ -408,7 +408,7 @@ const StyledSection = styled.section`
 `
 
 export const DeveloperCard = styled(StyledCard)`
-  mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
+  mix-blend-mode: overlay;
   background: url(${DevImage});
   color: white;
   background-size: cover;
@@ -416,7 +416,7 @@ export const DeveloperCard = styled(StyledCard)`
 `
 
 export const GovernanceCard = styled(StyledCard)`
-  mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
+  mix-blend-mode: overlay;
   background: url(${GovImage});
   background-size: cover;
   background-repeat: no-repeat;

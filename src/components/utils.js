@@ -7,7 +7,7 @@ import noise from '../images/noise.png'
 import { Link } from 'gatsby'
 
 export const CardBGImage = styled.span`
-  mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
+  mix-blend-mode: overlay;
   background: url(${uBanner});
   width: 55vw;
   max-width: 480px;
@@ -29,7 +29,7 @@ export const CardBGImage = styled.span`
 `
 
 export const CardGlimmerImage = styled.span`
-  mix-blend-mode: ${({ isDark }) => (isDark ? 'overlay' : 'lighten')};
+  mix-blend-mode: overlay;
   background: url(${gImage});
   width: 100%;
   height: 100%;

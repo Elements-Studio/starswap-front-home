@@ -70,7 +70,7 @@ export default ({ children, className }) => {
       Prism={Prism}
       code={children}
       language={language}
-      theme={isDark ? themeDark : themeLight}
+      theme={themeDark}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Wrapper>
