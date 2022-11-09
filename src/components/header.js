@@ -27,13 +27,13 @@ const StyledHeader = styled.header`
   z-index: 3;
   position: sticky;
   top: -1px;
-  // background: ${({ theme, open, showBG }) => (showBG && !open ? theme.titleHeaderBackgroundColor : 'none')};
-  border-bottom: 1px solid ${({ theme, open, showBG }) => (showBG && !open ? theme.concreteGray : 'none')};
+  // background: ${ ({ theme, open, showBG }) => (showBG && !open ? theme.titleHeaderBackgroundColor : 'none') };
+  border-bottom: 1px solid ${ ({ theme, open, showBG }) => (showBG && !open ? theme.concreteGray : 'none') };
   // transition: background-color 0.25s ease;
 
   @media (max-width: 960px) {
     padding: 1rem 1.25rem;
-    height: ${({ open }) => (open ? '100vh' : '100%')};
+    height: ${ ({ open }) => (open ? '100vh' : '100%') };
   }
 `
 
@@ -47,17 +47,17 @@ const StyledNav = styled.nav`
   @media (max-width: 960px) {
     position: fixed;
     top: 0px;
-    right: ${({ open }) => (open ? '0px' : '-100%')};
+    right: ${ ({ open }) => (open ? '0px' : '-100%') };
     align-items: flex-start;
     flex-wrap: wrap;
     -webkit-overflow-scrolling: touch;
-    background-color: ${({ theme }) => theme.colors.grey1};
+    background-color: ${ ({ theme }) => theme.colors.grey1 };
     width: 100%;
     height: 100%;
     z-index: 999;
     padding: 2rem;
     overflow: auto;
-    box-shadow: ${({ theme }) => theme.shadows.huge};
+    box-shadow: ${ ({ theme }) => theme.shadows.huge };
   }
 
   > * + * {
@@ -79,9 +79,9 @@ const StyledNavTitleWrapper = styled.nav`
 
 const StyledTradeLink = styled.a`
   padding: 0.25rem 0.75rem;
-  background-color: ${({ theme }) => theme.textColor};
+  background-color: ${ ({ theme }) => theme.textColor };
   text-decoration: none;
-  color: ${({ theme }) => theme.invertedTextColor};
+  color: ${ ({ theme }) => theme.invertedTextColor };
   border-radius: 12px;
   display: inline-block;
   font-weight: 500;
@@ -90,7 +90,7 @@ const StyledTradeLink = styled.a`
   white-space: nowrap;
   margin-left: 1rem;
   border: 1px solid transparent;
-  box-shadow: ${({ theme }) => theme.shadows.small};
+  box-shadow: ${ ({ theme }) => theme.shadows.small };
 
   :hover,
   :focus {
@@ -102,9 +102,9 @@ const StyledButton = styled.button`
   border: none;
   background-color: rgba(0, 0, 0, 0);
   path {
-    fill: ${({ theme }) => theme.textColor};
+    fill: ${ ({ theme }) => theme.textColor };
   }
-  color: ${({ theme }) => theme.textColor};
+  color: ${ ({ theme }) => theme.textColor };
   :focus {
     outline: none;
   }
@@ -120,13 +120,13 @@ const StyledHomeLink = styled(Link)`
   max-height: 48px;
   display: flex;
   align-items: center;
-  ${({theme}) => theme.invertImage}
+  ${ ({ theme }) => theme.invertImage }
 `
 
 const MenuToggle = styled.button`
   border: none;
   background-color: transparent;
-  color: ${({ theme }) => theme.colors.grey9};
+  color: ${ ({ theme }) => theme.colors.grey9 };
   display: none;
   z-index: 9999;
   width: 24px;
@@ -138,15 +138,15 @@ const MenuToggle = styled.button`
   }
   @media (max-width: 960px) {
     display: initial;
-    position: ${({ open }) => (open ? 'fixed' : 'relative')};
-    right: ${({ open }) => (open ? '1.5rem' : 'initial')};
-    top: ${({ open }) => (open ? '1.5rem' : 'initial')};
+    position: ${ ({ open }) => (open ? 'fixed' : 'relative') };
+    right: ${ ({ open }) => (open ? '1.5rem' : 'initial') };
+    top: ${ ({ open }) => (open ? '1.5rem' : 'initial') };
   }
 `
 
 const StyledUni = styled(Uni)`
   path {
-    fill: ${({ theme }) => theme.textColor};
+    fill: ${ ({ theme }) => theme.textColor };
   }
   margin: 0;
   width: 32px;
@@ -162,13 +162,13 @@ const StyledUni = styled(Uni)`
 
 const StyledCloseIcon = styled(CloseIcon)`
   path {
-    stroke: ${({ theme }) => theme.textColor};
+    stroke: ${ ({ theme }) => theme.textColor };
   }
 `
 
 const StyledMenuIcon = styled(MenuIcon)`
   path {
-    stroke: ${({ theme }) => theme.textColor};
+    stroke: ${ ({ theme }) => theme.textColor };
   }
 `
 
@@ -254,7 +254,7 @@ const Header = props => {
             textDecoration: `none`
           }}
         >
-          <img style={{height: '32px', marginBottom: '0'}} src={NavLogo} />
+          <img style={{ height: '32px', marginBottom: '0' }} src={NavLogo} />
         </StyledHomeLink>
       </StyledNavTitleWrapper>
       <MenuToggle ref={button} open={isMenuOpen} onClick={() => updateIsMenuOpen(!isMenuOpen)}>
@@ -272,7 +272,7 @@ const Header = props => {
               border: '1px solid #32F0C0'
             }}
             target="_blank"
-            href="https://starswap.xyz/"
+            href="https://app.starswap.xyz"
           >
             Launch App
           </StyledTradeLink>
