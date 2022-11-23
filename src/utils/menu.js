@@ -36,7 +36,6 @@ const menu = [
       { name: 'Telegram', link: 'https://t.me/StarswapEN' }
     ]
   },
-  { name: 'Jobs', link: 'https://westar.io/join-us' },
   {
     name: 'More',
     sublinks: [

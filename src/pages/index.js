@@ -310,7 +310,7 @@ const IndexPage = props => {
         <StyledTitle>
           <StyledBodyTitle>
             <span style={{color: '#32F0C0'}}>THE FIRST</span>
-            <div style={{marginTop: '30px'}}>FULL-FUNCTIONAL DEX</div>
+            <div style={{marginTop: '30px'}}>FULL-FEATURED DEX</div>
             <div style={{color: '#32F0C0', marginTop: '30px', marginBottom: '30px'}}>on Aptos and Starcoin</div>
           </StyledBodyTitle>
           <StyledBodySubTitle>
