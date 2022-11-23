@@ -314,7 +314,7 @@ const IndexPage = props => {
             <div style={{color: '#32F0C0', marginTop: '30px', marginBottom: '30px'}}>on Aptos and Starcoin</div>
           </StyledBodyTitle>
           <StyledBodySubTitle>
-            {'Swap, earn, and build on the leading decentralized crypto trading protocol.'}
+            {'starswap, earn, and build on the leading decentralized crypto trading protocol.'}
           </StyledBodySubTitle>
 
           <StyledTradeLink
