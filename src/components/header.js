@@ -23,13 +23,15 @@ const StyledHeader = styled.header`
   align-items: center;
   box-sizing: border-box;
   padding: 1rem 1.25rem;
-  width: 100%;
+  width: calc(100% + 200px);
+  margin-left: -100px;
   z-index: 3;
   position: sticky;
   top: -1px;
   // background: ${ ({ theme, open, showBG }) => (showBG && !open ? theme.titleHeaderBackgroundColor : 'none') };
   border-bottom: 1px solid ${ ({ theme, open, showBG }) => (showBG && !open ? theme.concreteGray : 'none') };
   // transition: background-color 0.25s ease;
+  background: #171717;
 
   @media (max-width: 960px) {
     padding: 1rem 1.25rem;
