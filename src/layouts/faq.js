@@ -25,7 +25,6 @@ const StyledDocs = styled.div`
   padding-top: 2rem;
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey2};
-  border-top: 1px solid ${({ theme }) => theme.colors.grey2};
 
   @media (max-width: 960px) {
     flex-direction: column;

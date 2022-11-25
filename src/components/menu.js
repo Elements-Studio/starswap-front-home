@@ -56,7 +56,7 @@ const MenuFlyout = styled.nav`
   position: absolute;
   top: 2.2rem;
   left: -1rem;
-  min-width: 256px;
+  min-width: 200px;
   width: 100%;
   width: fit-content;
   border-radius: 8px;

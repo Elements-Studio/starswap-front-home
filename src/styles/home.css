@@ -1,5 +1,6 @@
 html {
-    background: url('../images/1.jpg');
+    background-color: #171717;
+    background-image: url('../images/1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
