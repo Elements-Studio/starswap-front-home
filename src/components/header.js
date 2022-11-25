@@ -36,6 +36,13 @@ const StyledHeader = styled.header`
   @media (max-width: 960px) {
     padding: 1rem 1.25rem;
     height: ${ ({ open }) => (open ? '100vh' : '100%') };
+    width: calc(100% + 100px);
+    margin-left: -50px;
+  }
+
+  @media (max-width: 650px) {
+    width: 100%;
+    margin-left: 0;
   }
 `
 

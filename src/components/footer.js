@@ -16,6 +16,7 @@ const StyledFooter = styled.footer`
 
   @media (max-width: 1155px) {
     display: block;
+    text-align: center;
   }
 
   @media (max-width: 960px) {
@@ -27,18 +28,32 @@ const StyledFooterLinkSection = styled.ul`
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex-wrap: wrap;
   margin: 0;
   line-height: 1;
+
+  @media (max-width: 1155px) {
+    justify-content: center;
+    margin-top: 20px;
+  }
 `
 
 const StyledFooterLink = styled(Link)`
   margin-right: 50px;
   color: ${({ theme }) => theme.textColor};
+
+  @media (max-width: 1155px) {
+    margin-right: 20px;
+  }
 `
 
 const StyledToLink = styled.a`
   margin-right: 50px;
   color: ${({ theme }) => theme.textColor};
+
+  @media (max-width: 1155px) {
+    margin-right: 20px;
+  }
 `
 
 const StyledTwitter = styled(Twitter)`
@@ -48,6 +63,10 @@ const StyledTwitter = styled(Twitter)`
   width: 16px;
   height: 16px;
   margin-right: 50px;
+
+  @media (max-width: 1155px) {
+    margin-right: 20px;
+  }
 `
 
 const StyledDiscord = styled(Discord)`
@@ -65,6 +84,21 @@ const StyledGithub = styled(Github)`
   width: 16px;
   height: 16px;
   margin-right: 50px;
+
+  @media (max-width: 1155px) {
+    margin-right: 20px;
+  }
+`
+
+export const FooterImgEl = styled.img`
+  width: 16px;
+  height: 16px;
+  margin-bottom: 0;
+  margin-right: 50px;
+
+  @media (max-width: 1155px) {
+    margin-right: 20px;
+  }
 `
 
 const Footer = () => {
@@ -76,7 +110,7 @@ const Footer = () => {
         <StyledToLink href="https://starswap.xyz" rel="noopener noreferrer" target="_blank">App</StyledToLink>
         <StyledFooterLink to="/faq">FAQ</StyledFooterLink>
         <a href="http://t.me/StarswapEN" rel="noopener noreferrer" target="_blank">
-          <img src={Telegram} style={{width: '16px', height: '16px', marginBottom: '0', marginRight: '50px'}} />
+          <FooterImgEl src={Telegram} />
         </a>
         <a href="https://twitter.com/StarswapEN" rel="noopener noreferrer" target="_blank">
           <StyledTwitter />

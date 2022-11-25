@@ -403,7 +403,7 @@ const StyledSection = styled.section`
   margin: 2rem 0;
 
   @media (max-width: 640px) {
-    margin: 0;
+    margin: 300px 0 0;
   }
 `
 
@@ -463,20 +463,40 @@ export const GrantsCard = styled(StyledCard)`
   }
 `
 
+export const MoreHideImg = styled.img`
+  width: 70px;
+  height: 70px; 
+  margin-left: 20px;
+
+  @media (max-width: 650px) {
+    display: none;
+  }
+`;
+
+export const SubTitleGreen = styled.div`
+  color: #32F0C0;
+  margin-top: 20px;
+  font-size: 3.5rem;
+
+  @media (max-width: 650px) {
+    font-size: 2.5rem;
+  }
+`
+
 const EcosystemSection = () => {
   return (
     <StyledSection>
       <StyledItemRow>
-          <div style={{display: 'flex', width: '100%'}}>
+          <div style={{display: 'flex', width: '100%', flexWrap: 'wrap', justifyContent: 'space-between'}}>
           <StyledSectionHeader>
-            <div style={{fontSize: '60px'}}>
-              <div style={{display: 'flex'}}>STARSWAP <img style={{ width: '70px', height: '70px', marginLeft: '20px'}} src={RightImage} /></div>
-              <div style={{color: '#32F0C0', textAlign: 'left'}}>ECOSYSTEM</div>
+            <div style={{fontSize: '3.75rem'}}>
+              <div style={{display: 'flex'}}>STARSWAP <MoreHideImg src={RightImage} /></div>
+              <SubTitleGreen>ECOSYSTEM</SubTitleGreen>
             </div>
           </StyledSectionHeader>
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'end', marginLeft: '360px'}}>
+          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'end'}}>
             <StyledSectionTitle>A growing network of DeFi Apps.</StyledSectionTitle>
-            <StyledBodySubText>
+            <StyledBodySubText style={{maxWidth: '870px'}}>
               Developers, traders, and liquidity providers participate together in a financial marketplace that is open
               and accessible to all.
             </StyledBodySubText>
@@ -495,19 +515,19 @@ const DeveloperSection = () => {
   return (
     <StyledSection style={{marginTop: '130px'}}>
       <StyledItemRow>
-          <div style={{display: 'flex', justifyContent: 'space-around'}}>
+          <div style={{display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', width: '100%'}}>
           <StyledSectionHeader style={{marginTop: '0'}}>
-            <div style={{fontSize: '60px', textAlign: 'left'}}>
-              <div style={{display: 'flex'}}>DEVELOPER <img style={{ width: '70px', height: '70px', marginLeft: '20px'}} src={RightImage} /></div>
-              <div style={{color: '#32F0C0'}}>DOCUMENTATION</div>
+            <div style={{fontSize: '3.75rem', textAlign: 'left'}}>
+              <div style={{display: 'flex'}}>DEVELOPER <MoreHideImg src={RightImage} /></div>
+              <SubTitleGreen>DOCUMENTATION</SubTitleGreen>
             </div>
           </StyledSectionHeader>
-          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'start', alignItems: 'start', marginLeft: '190px'}}>
+          <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'start', alignItems: 'start'}}>
             <StyledSectionTitle>Superpowers for DeFi developers.</StyledSectionTitle>
-            <StyledBodySubText style={{ textAlign: 'left' }}>
+            <StyledBodySubText style={{ textAlign: 'left', maxWidth: '870px' }}>
               Starswap is a decentralized exchange (DEX) that is deployed in a smart contract network on the Starcoin block chain. 
             </StyledBodySubText>
-            <StyledBodySubText style={{ textAlign: 'left' }}>
+            <StyledBodySubText style={{ textAlign: 'left', maxWidth: '870px' }}>
               Every wallet holder on the Starcoin can freely exchange tokens on the Starswap, and become an automated mark maker (AMM) by providing and staking liquidity.
             </StyledBodySubText>
           </div>

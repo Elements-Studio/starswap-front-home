@@ -163,6 +163,14 @@ export const GlobalStyle = createGlobalStyle`
     @media (min-width: 1441px) {
         overflow-x: visible;
     }
+
+    @media (max-width: 960px) {
+      padding: 0 50px;
+    }
+
+    @media (max-width: 650px) {
+      padding: 0px;
+    }
   }
 
   * {
