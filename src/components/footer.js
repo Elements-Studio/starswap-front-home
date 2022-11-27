@@ -107,7 +107,7 @@ const Footer = () => {
       <p style={{ margin: 0 }}>© {new Date().getFullYear()} Starswap</p>
       <StyledFooterLinkSection>
         <StyledFooterLink to="/about">About</StyledFooterLink>
-        <StyledToLink href="https://starswap.xyz" rel="noopener noreferrer" target="_blank">App</StyledToLink>
+        <StyledToLink href="https://app.starswap.xyz" rel="noopener noreferrer" target="_blank">App</StyledToLink>
         <StyledFooterLink to="/faq">FAQ</StyledFooterLink>
         <a href="http://t.me/StarswapEN" rel="noopener noreferrer" target="_blank">
           <FooterImgEl src={Telegram} />

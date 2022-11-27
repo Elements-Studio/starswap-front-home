@@ -324,7 +324,7 @@ const IndexPage = props => {
               border: '1px solid #32F0C0'
             }}
             target="_blank"
-            href="https://starswap.xyz/"
+            href="https://app.starswap.xyz"
           >
             Launch App
           </StyledTradeLink>
