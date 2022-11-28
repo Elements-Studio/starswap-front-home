@@ -66,7 +66,7 @@ const Heading = ({ heading }) => {
         onClick={() => {
           // scrollTo('#' + slug)
           const id = '#' + slug
-          const anchor = document.querySelector(id)
+          const anchor = document?.querySelector(id)
           const offset = anchor.getBoundingClientRect().top + window.scrollY
           window.scroll({ top: offset - 80, left: 0 })
           window.history.pushState({}, '', '#' + slug)

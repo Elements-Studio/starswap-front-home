@@ -1,4 +1,4 @@
-import scrollTo from 'gatsby-plugin-smoothscroll'
+// import scrollTo from 'gatsby-plugin-smoothscroll'
 import React from 'react'
 import styled from 'styled-components'
 
@@ -30,7 +30,7 @@ const Heading = ({ heading }) => {
     <StyledHeadingListElement key={heading.value} depth={heading.depth}>
       <StyledHeadingLink
         onClick={() => {
-          scrollTo('#' + slug)
+          // scrollTo('#' + slug)
           window.history.pushState({}, '', '#' + slug)
         }}
       >

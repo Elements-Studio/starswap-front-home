@@ -1,7 +1,7 @@
 import React, { useState, useLayoutEffect } from 'react'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
-import scrollTo from 'gatsby-plugin-smoothscroll'
+// import scrollTo from 'gatsby-plugin-smoothscroll'
 import { useStaticQuery, graphql } from 'gatsby'
 import DropdownArrow from './dropdownArrow.js'
 
@@ -175,7 +175,7 @@ function ReferenceList(props) {
         })
       return (
         <StyledListItem key={node.id}>
-          <StyledLink onClick={() => scrollTo('#docs-header')} to={'/docs/' + slug + '/' + node.name}>
+          <StyledLink to={'/docs/' + slug + '/' + node.name}>
             {title}
           </StyledLink>
         </StyledListItem>
