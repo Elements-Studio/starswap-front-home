@@ -28,7 +28,7 @@ FAI is the stablecoin on the Starcoin, which value is pegged to 1 USD, backed by
 
 ### **Does Starswap support USDT or other stablecoins?**
 
-Starswap supports USDT after the cross-chain bridge goes online.
+Starswap supports USDT in starcoin chain and USDC in aptos chain after the cross-chain bridge goes online.
 
 ### **Is there a cross-chain bridge to transfer my USDT assets to Starswap?**
 
